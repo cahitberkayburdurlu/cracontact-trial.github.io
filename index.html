@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="https://berkaycafebrunch.my.canva.site/ana-sayfa/_assets/media/ead11b157536d10a7ee860375a1d7bef.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="En iyi filmleri ve dizileri keşfet! Film ve dizi önerileri burada.">
+    <meta name="keywords" content="film, dizi, izle, öneri, Netflix, popüler filmler">
+    <meta name="author" content="Senin Adın">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Facebook ve sosyal medya için) -->
+    <meta property="og:title" content="Movie and Series Finder">
+    <meta property="og:description" content="Favori filmlerini ve dizilerini kolayca bul!">
+    <meta property="og:image" content="URL-to-your-image.jpg">
+    <meta property="og:url" content="http://127.0.0.1:5501/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Movie and Series Finder">
+    <meta name="twitter:description" content="Favori filmlerini ve dizilerini keşfet!">
+    <meta name="twitter:image" content="URL-to-your-image.jpg">
+    <title>Movie and Series Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="text-center my-4">
+<!-- Tam logo (masaüstü için) -->
+<img class="logo-full" src="https://berkaycafebrunch.my.canva.site/dagonru2vle/_assets/media/e6fe310caeb5ee0f9ffbc4bb83e8105b.png" alt="Logo">
+
+<!-- Kısa logo (mobil için) -->
+<img class="logo-short" src="https://berkaycafebrunch.my.canva.site/ana-sayfa/_assets/media/ead11b157536d10a7ee860375a1d7bef.png" alt="N Logo">    </div>
+    <div class="container mt-5">
+        <h1 class="display-4">Movie and Series Finder</h1>
+        <p class="lead">Search for your favorite movies and series!</p>
+
+        <!-- Movie Search Section -->
+        <div id="movieSection">
+            <h3>Find a Movie</h3>
+            <input type="text" id="movieName" class="form-control" placeholder="Search for movies..." oninput="getMovieSuggestions()">
+            <ul id="movieSuggestions" class="list-unstyled"></ul>
+            <button id="movieWatchButton" onclick="searchMovie()">Search Movie</button>
+        </div>
+
+        <!-- Series Search Section -->
+        <div id="seriesSection">
+            <h3>Find a Series</h3>
+            <input type="text" id="seriesName" class="form-control" placeholder="Search for series..." oninput="getSeriesSuggestions()">
+            <ul id="seriesSuggestions" class="list-unstyled"></ul>
+            <button id="seriesWatchButton" onclick="searchSeries()">Search Series</button>
+        </div>
+
+        <!-- Movie Result Section -->
+        <div id="movieResult" class="row mt-5" style="display: none;">
+            <div class="col-md-12 text-center">
+                <h3>Featured Movie</h3>
+            </div>
+            <div class="col-md-4 text-center">
+                <div id="moviePosterSection" class="card">
+                    <img id="moviePoster" class="card-img-top" src="" alt="Movie Poster">
+                    <div class="card-body">
+                        <h5 class="card-title" id="movieTitle"></h5>
+                        <button class="watch-button btn-movie" onclick="watchMovie()">Film İzle</button>                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Series Result Section -->
+        <div id="seriesResult" class="row mt-5" style="display: none;">
+            <div class="col-md-12 text-center">
+                <h3>Featured Series</h3>
+            </div>
+            <div class="col-md-4 text-center">
+                <div id="seriesPosterSection" class="card">
+                    <img id="seriesPoster" class="card-img-top" src="" alt="Series Poster">
+                    <div class="card-body">
+                        <h5 class="card-title" id="seriesTitle"></h5>
+                        <button id="seriesWatchButton" class="btn btn-dark" onclick="watchSeries()">Dizi İzle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
